@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OwlEyeEngine | Silent Monitor & Active Cyber Defense</title>
+    <meta name="description" content="Next-generation ultra-lightweight EDR & Heuristic Security Agent for Linux, Windows & Cloud Servers with Real-time Active Defense.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animated Mesh -->
+    <div class="mesh-bg"></div>
+    
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <span class="owl-logo">🦉</span>
+                <div class="brand-info">
+                    <span class="brand-name">OwlEyeEngine</span>
+                    <span class="brand-badge">v3.0 GLOBAL</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">Capacidades</a>
+                <a href="#architecture">Arquitectura</a>
+                <a href="#pricing">Precios & Planes</a>
+                <a href="#quickstart" class="btn btn-secondary btn-nav">Despliegue Rápido</a>
+                <a href="http://localhost:8000" target="_blank" class="btn btn-primary btn-nav">Abrir Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="pulse-dot"></span>
+                SISTEMA DE CIBERSEGURIDAD DE PRÓXIMA GENERACIÓN
+            </div>
+            <h1 class="hero-title">El Cazador Silencioso que Tu Infraestructura Necesita.</h1>
+            <p class="hero-subtitle">
+                Monitoreo de bajo nivel, detección heurística con puntuación de amenaza y mitigación activa (Auto-Kill & Bloqueo de IPs en Firewall) sin ralentizar tu servidor.
+            </p>
+            <div class="hero-actions">
+                <a href="#quickstart" class="btn btn-primary btn-lg">🚀 Probar Gratis en 1 Minuto</a>
+                <a href="#demo-script" class="btn btn-glass btn-lg">📹 Ver Guion de Demo</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">&lt; 15 MB</span>
+                    <span class="stat-label">Consumo de RAM</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Respuesta en Milisegundos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">Cross-Platform</span>
+                    <span class="stat-label">Windows & Linux Host</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Mockup Showcase -->
+    <section class="mockup-section">
+        <div class="window-mockup">
+            <div class="window-header">
+                <div class="window-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="window-title">OwlEyeEngine Web Console — http://localhost:8000</div>
+            </div>
+            <div class="window-body">
+                <div class="mockup-grid">
+                    <div class="mock-card">
+                        <div class="mock-label">DEFENSA ACTIVA</div>
+                        <div class="mock-val green">AUTO-MITIGACIÓN ON</div>
+                    </div>
+                    <div class="mock-card">
+                        <div class="mock-label">CPU USAGE</div>
+                        <div class="mock-val cyan">0.4%</div>
+                    </div>
+                    <div class="mock-card">
+                        <div class="mock-label">PORT SCAN THREATS</div>
+                        <div class="mock-val rose">BLOCKED (85/100)</div>
+                    </div>
+                </div>
+                <div class="mockup-table">
+                    <div class="mock-row header-row">
+                        <span>TIMESTAMP</span>
+                        <span>EVENTO</span>
+                        <span>RIESGO</span>
+                        <span>ACCIÓN AUTOMÁTICA</span>
+                    </div>
+                    <div class="mock-row">
+                        <span>16:32:01</span>
+                        <span>Port Scan IP: 192.168.1.105</span>
+                        <span class="badge-danger">85/100</span>
+                        <span class="badge-success">IP Bloqueada en Firewall</span>
+                    </div>
+                    <div class="mock-row">
+                        <span>16:30:14</span>
+                        <span>Execution /tmp/malware.sh</span>
+                        <span class="badge-danger">90/100</span>
+                        <span class="badge-success">Proceso Finalizado (PID 4921)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="section-header">
+            <h2>Por qué OwlEyeEngine Supera a Antivirus Tradicionales</h2>
+            <p>Diseñado bajo la metáfora del búho: sigilo absoluto, visión 360° y respuesta letal proactiva.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Visión 360° de Procesos</h3>
+                <p>Inspección continua de la jerarquía de procesos estilo htop. Detecta inmediatamente ejecutables lanzados desde directorios temporales u ocultos.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Mitigación Activa Instantánea</h3>
+                <p>No solo genera alertas: liquida procesos maliciosos en milisegundos y aplica reglas dinámicas en el Firewall del sistema operativo.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Contexto de Red Cisco</h3>
+                <p>Identificación precisa de Entry Points y detección de barridos de puertos en entornos de red complejos antes de que se produzca una brecha.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Alertas en Tiempo Real</h3>
+                <p>Integración nativa con Telegram Bot API y Webhooks para recibir notificaciones críticas directamente en tu teléfono inteligente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section id="quickstart" class="section bg-panel">
+        <div class="section-header">
+            <h2>Despliegue Rápido en 1 Comando</h2>
+            <p>Listo para instalar en cualquier servidor Linux, Windows o contenedor Docker.</p>
+        </div>
+
+        <div class="code-box">
+            <div class="code-header">
+                <span>Bash / Docker One-Liner</span>
+                <button class="copy-btn" onclick="navigator.clipboard.writeText('docker-compose up -d --build')">Copiar</button>
+            </div>
+            <pre><code><span class="code-comment"># Opción 1: Despliegue inmediato en Docker</span>
+git clone https://github.com/ExeDevCentral/OwlEyeEngine.git
+cd OwlEyeEngine
+docker-compose up -d --build
+
+<span class="code-comment"># Opción 2: Ejecución local con Python</span>
+pip install -r requirements.txt
+python sentry.py</code></pre>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="section-header">
+            <h2>Modelo Comercial Open-Core</h2>
+            <p>Comienza gratis con el agente local o escala a la nube para gestionar infraestructuras complejas.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="price-tier">COMMUNITY OPEN-CORE</div>
+                <div class="price-amount">$0 <span>/ para siempre</span></div>
+                <p class="price-desc">Ideal para desarrolladores, Homelabs y un único servidor.</p>
+                <ul class="price-features">
+                    <li>✓ Agente completo Python local</li>
+                    <li>✓ Dashboard Web Local (Puerto 8000)</li>
+                    <li>✓ Detección Heurística & Auto-Kill</li>
+                    <li>✓ Alertas por Telegram</li>
+                    <li>✓ Código Fuente Open Source</li>
+                </ul>
+                <a href="#quickstart" class="btn btn-secondary btn-full">Descargar Gratis</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="popular-badge">MÁS POPULAR</div>
+                <div class="price-tier">PRO CLOUD SAAS</div>
+                <div class="price-amount">$19 <span>/ mes</span></div>
+                <p class="price-desc">Para startups y administradores de hasta 10 servidores.</p>
+                <ul class="price-features">
+                    <li>✓ Todo lo del plan Community</li>
+                    <li>✓ Central de Mando Cloud Multi-Nodo</li>
+                    <li>✓ Historial de Logs ILIMITADO en Nube</li>
+                    <li>✓ Reglas SIGMA & YARA personalizadas</li>
+                    <li>✓ Soporte Técnico Prioritario</li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-full">Iniciar Prueba de 14 Días</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Script Section -->
+    <section id="demo-script" class="section bg-panel">
+        <div class="section-header">
+            <h2>🎬 Guion de Video Demo (60 Segundos para Redes Sociales)</h2>
+            <p>Usa esta estructura exacta para grabar el video demostrativo que atraerá clientes e inversores.</p>
+        </div>
+
+        <div class="script-timeline">
+            <div class="timeline-step">
+                <div class="step-time">00:00 - 00:10</div>
+                <div class="step-content">
+                    <h4>El Gancho (The Hook)</h4>
+                    <p><em>"¿Sabías que los antivirus tradicionales consumen hasta el 30% de tu CPU y RAM en servidores pequeños? Presentamos OwlEyeEngine: el cazador silencioso."</em></p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="step-time">00:10 - 00:35</div>
+                <div class="step-content">
+                    <h4>La Demostración del Ataque</h4>
+                    <p>Muestra la pantalla dividida. A la izquierda, simulas ejecutar un script en `/tmp/fake_malware.py`. A la derecha, muestras el Dashboard de OwlEye detectándolo en 0.2 segundos y liquidando el proceso con el escudo de Defensa Activa.</p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="step-time">00:35 - 00:50</div>
+                <div class="step-content">
+                    <h4>El Panel de Control</h4>
+                    <p>Enseña la interfaz cyberpunk en `http://localhost:8000`, mostrando el gráfico de conexiones activas, consumo de recursos ultra-bajo y logs encriptados.</p>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="step-time">00:50 - 01:00</div>
+                <div class="step-content">
+                    <h4>Llamado a la Acción (CTA)</h4>
+                    <p><em>"OwlEyeEngine v3.0 ya está disponible de código abierto en GitHub. Pruébalo gratis hoy en tu servidor o Homelab."</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 OwlEyeEngine Security. Desarrollado con tecnología de cazador nocturno.</p>
+        <p><a href="https://github.com/ExeDevCentral/OwlEyeEngine.git" target="_blank" style="color: var(--cyan);">GitHub Repository</a></p>
+    </footer>
+</body>
+</html>

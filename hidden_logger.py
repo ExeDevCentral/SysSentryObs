@@ -7,7 +7,7 @@ class HiddenLogger:
         self.log_path = get_log_path()
         # Initialize file if it doesn't exist
         if not os.path.exists(self.log_path):
-            with open(self.log_path, "w") as f:
+            with open(self.log_path, "w", encoding="utf-8") as f:
                 f.write(f"--- Sentry Log Initialized: {datetime.datetime.now()} ---\n")
             hide_file(self.log_path)
 
@@ -23,11 +23,34 @@ class HiddenLogger:
             f"ENTRY_POINT: {entry_point}\n"
         )
         
-        with open(self.log_path, "a") as f:
-            f.write(entry)
+        try:
+            with open(self.log_path, "a", encoding="utf-8") as f:
+                f.write(entry)
+        except Exception:
+            pass
         
         # Re-verify hidden attribute on Windows just in case
         hide_file(self.log_path)
+
+    def get_recent_logs(self, limit=100):
+        """
+        Reads recent log entries from the hidden log file.
+        """
+        if not os.path.exists(self.log_path):
+            return []
+            
+        logs = []
+        try:
+            with open(self.log_path, "r", encoding="utf-8", errors="ignore") as f:
+                lines = f.readlines()
+                for line in reversed(lines[-limit:]):
+                    line = line.strip()
+                    if line and line.startswith("["):
+                        logs.append(line)
+        except Exception as e:
+            logs.append(f"Error reading log file: {e}")
+            
+        return logs
 
 if __name__ == "__main__":
     logger = HiddenLogger()

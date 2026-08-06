@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OwlEyeEngine | Silent Monitor & Active Defense</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <header class="navbar">
+        <div class="brand">
+            <div class="logo-container">
+                <span class="owl-icon">🦉</span>
+                <div class="brand-text">
+                    <span class="title">OwlEyeEngine <span class="version-tag">v3.0 GLOBAL</span></span>
+                    <span class="subtitle">The Silent Hunter & Active Defense</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="defense-toggle-container">
+            <span class="toggle-label">Defensa Activa:</span>
+            <label class="switch">
+                <input type="checkbox" id="autoDefenseToggle" onchange="toggleAutoDefense(this.checked)">
+                <span class="slider round"></span>
+            </label>
+            <span id="defenseStatusBadge" class="badge badge-warning">ALERTA</span>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Top KPI Stats Row -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">CPU UTILIZATION</span>
+                    <span class="stat-icon">⚡</span>
+                </div>
+                <div class="stat-value" id="cpuVal">0%</div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" id="cpuBar" style="width: 0%;"></div></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">MEMORY USAGE</span>
+                    <span class="stat-icon">🧠</span>
+                </div>
+                <div class="stat-value" id="memVal">0 MB</div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill cyan" id="memBar" style="width: 0%;"></div></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">ACTIVE THREATS</span>
+                    <span class="stat-icon">🚨</span>
+                </div>
+                <div class="stat-value threat-color" id="threatsCountVal">0</div>
+                <div class="stat-sub" id="mitigatedVal">0 mitigadas</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">SYSTEM UPTIME</span>
+                    <span class="stat-icon">⏱️</span>
+                </div>
+                <div class="stat-value green" id="uptimeVal">00:00:00</div>
+                <div class="stat-sub" id="statusVal">OPERATIONAL</div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-bar">
+            <button class="tab-btn active" onclick="switchTab('overview')">🎯 Amenazas & Alertas</button>
+            <button class="tab-btn" onclick="switchTab('processes')">🔍 Procesos (360° Vision)</button>
+            <button class="tab-btn" onclick="switchTab('network')">🌐 Red (Silent Flight)</button>
+            <button class="tab-btn" onclick="switchTab('defender')">🛡️ Defensa Activa & IPs</button>
+            <button class="tab-btn" onclick="switchTab('logs')">📜 Hidden Logs</button>
+        </nav>
+
+        <!-- Tab Content Views -->
+
+        <!-- TAB 1: OVERVIEW & THREATS -->
+        <section id="tab-overview" class="tab-content active">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🚨 Amenazas Heurísticas Detectadas</h3>
+                    <button class="btn-sm btn-secondary" onclick="fetchThreats()">🔄 Actualizar</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Tipo</th>
+                                <th>Severidad</th>
+                                <th>Score</th>
+                                <th>Detalles</th>
+                                <th>Mitigación</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="threatsTableBody">
+                            <tr><td colspan="7" class="loading">Cargando amenazas...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: PROCESSES -->
+        <section id="tab-processes" class="tab-content">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🔍 Inspección de Procesos en Tiempo Real (htop)</h3>
+                    <input type="text" id="procSearch" class="search-input" placeholder="Buscar por PID o Nombre..." onkeyup="filterProcesses()">
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>PID</th>
+                                <th>Proceso</th>
+                                <th>Usuario</th>
+                                <th>Ruta Ejecución</th>
+                                <th>CPU %</th>
+                                <th>RAM %</th>
+                                <th>Acción Defender</th>
+                            </tr>
+                        </thead>
+                        <tbody id="procTableBody">
+                            <tr><td colspan="7" class="loading">Cargando procesos...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: NETWORK MONITOR -->
+        <section id="tab-network" class="tab-content">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🌐 Conexiones de Red Entrantes / Salientes (Cisco Context)</h3>
+                    <button class="btn-sm btn-secondary" onclick="fetchConnections()">🔄 Actualizar</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>IP Local</th>
+                                <th>IP Remota</th>
+                                <th>Estado</th>
+                                <th>PID</th>
+                                <th>Acción Firewall</th>
+                            </tr>
+                        </thead>
+                        <tbody id="netTableBody">
+                            <tr><td colspan="6" class="loading">Cargando conexiones...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: DEFENDER & BLOCKED IPS -->
+        <section id="tab-defender" class="tab-content">
+            <div class="grid-2col">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>🚫 IPs Bloqueadas en Firewall</h3>
+                    </div>
+                    <div class="manual-block-box">
+                        <input type="text" id="manualBlockIP" class="search-input" placeholder="Dirección IP a bloquear...">
+                        <button class="btn btn-danger" onclick="manualBlockIP()">Bloquear IP</button>
+                    </div>
+                    <ul class="blocked-list" id="blockedIPsList">
+                        <li class="empty-msg">No hay IPs bloqueadas actualmente.</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>⚙️ Reglas de Defensa Activa</h3>
+                    </div>
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <div>
+                                <strong>Auto-Kill en Rutas Sospechosas</strong>
+                                <p class="subtext">Termina instantáneamente procesos ejecutados desde /tmp o AppData/Local/Temp.</p>
+                            </div>
+                            <span class="badge badge-success">ACTIVO</span>
+                        </div>
+                        <div class="rule-item">
+                            <div>
+                                <strong>Auto-Block en Escaneo de Puertos</strong>
+                                <p class="subtext">Añade al firewall IPs con más de 5 conexiones por minuto.</p>
+                            </div>
+                            <span class="badge badge-success">ACTIVO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: HIDDEN LOGS -->
+        <section id="tab-logs" class="tab-content">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>📜 Registro Sigiloso (_sentry_log.sys)</h3>
+                    <button class="btn-sm btn-secondary" onclick="fetchLogs()">🔄 Actualizar Logs</button>
+                </div>
+                <div class="terminal-view" id="logsTerminal">
+                    <div>Iniciando terminal de logs...</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,88 +1,86 @@
-# 🦉 OwlEyeEngine: The Silent Monitor
+# 🦉 OwlEyeEngine: The Silent Monitor & Active Defense (v3.0 Global Edition)
 
 ![OwlEye Logo](owl_eye.png)
 
 ![Cybersecurity Shield](https://img.shields.io/badge/Focus-Cybersecurity-blue?style=for-the-badge&logo=shield)
 ![Platform Support](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-brightgreen?style=for-the-badge)
 ![Network](https://img.shields.io/badge/Context-Cisco%20Networks-orange?style=for-the-badge&logo=cisco)
+![Active Defense](https://img.shields.io/badge/Defense-Active%20Mitigation-red?style=for-the-badge)
+![Dashboard](https://img.shields.io/badge/UI-FastAPI%20Web%20Dashboard-cyan?style=for-the-badge)
 
 ```text
     ^...^
    / o o \
-   |  Y  |   "Silent flight, 360° vision. 
-    V v V    The predator the intruder never hears."
+   |  Y  |   "Silent flight, 360° vision, total active defense.
+    V v V    The predator the intruder never hears... until it strikes."
 ```
 
-**OwlEyeEngine** es la evolución de mi proyecto de seguridad, inspirado en la naturaleza del búho: un cazador nocturno, silencioso y letal. Este motor representa mi avance en el monitoreo de bajo nivel, detección heurística y seguridad en infraestructuras críticas.
-
-## 🚀 Mi Visión: El Cazador Silencioso
-Desarrollado a las 2 AM, en el silencio de la noche, este motor encarna la vigilancia proactiva. Mi capacidad técnica se centra en:
-- **Sigilo Absoluto:** Monitoreo que no deja rastro para el atacante.
-- **Detección Heurística:** Inteligencia que reconoce patrones sospechosos antes de que se conviertan en desastres.
-- **Enfoque Cisco:** Especializado en la trazabilidad de redes gestionadas.
+**OwlEyeEngine v3.0** es la evolución global del proyecto de seguridad, inspirado en la naturaleza del búho: un cazador nocturno, silencioso y letal. Este motor combina monitoreo de bajo nivel, detección heurística con puntuación de amenaza (*Threat Scoring*), mitigación activa (*Auto-Kill & IP Blocking*) y un **Panel Web futurista** en tiempo real.
 
 ---
 
-## 🛠️ Capacidades de OwlEye
-### 1. Visión 360° (Procesos) 🔍
-Un sistema de vigilancia estilo "htop" que captura:
-- **Identidad:** PID, usuario y jerarquía de procesos.
-- **Origen:** Rutas de ejecución y binarios relacionados.
+## 🚀 Capacidades Principales (Edición Global)
 
-### 2. Silent Flight (Redes Cisco) 🌐
-Detecta incursiones sin alertar al intruso, identificando los "Entry Points" exactos en entornos de red complejos.
+### 1. 🎯 Panel Web de Control e Inspección (Futurista & Glassmorphic)
+- **Visualización 360°:** Estado de CPU, Memoria, Uptime y Conexiones activas en tiempo real.
+- **Threat Feed Interactivo:** Historial de amenazas detectadas con botones de respuesta rápida ("Kill PID", "Bloquear IP").
+- **Filtro estilo `htop`:** Búsqueda rápida de procesos con consumo de recursos.
 
-### 3. Vuelo Heurístico 🧠
-El motor no solo observa, analiza:
-- **Port Scanning:** Identificación de barridos de red en tiempo real.
-- **Rutas Prohibidas:** Alertas inmediatas para procesos lanzados desde directorios sospechosos (Temp, Hidden).
+### 2. 🛡️ Módulo de Defensa Activa (Active Defense)
+- **Auto-Kill Proactivo:** Finaliza instantáneamente procesos maliciosos ejecutados desde directorios temporales o sospechosos (`/tmp`, `AppData\Local\Temp`).
+- **Bloqueo en Firewall:** Bloquea direcciones IP hostiles mediante `Windows Firewall` (Windows) o `iptables` (Linux) ante barridos o escaneos de puertos (*Port Scanning*).
+- **Control Manual o Automático:** Conmutador en tiempo real desde el Dashboard para alternar entre *Modo Alerta* y *Defensa Total*.
 
-### 4. Alertas Nocturnas 📱
-Integración con **Telegram** para notificaciones críticas enviadas directamente a tu móvil.
+### 3. 🧠 Análisis Heurístico Avanzado (v3.0 Engine)
+- Detección de patrones anómalos de conexión (Cisco Context & Entry Point Tracking).
+- Scoring de amenaza ponderado de 0 a 100 con clasificación de severidad (LOW, MEDIUM, HIGH, CRITICAL).
 
----
-
-## 📂 Arquitectura del Motor
-- `sentry.py`: El corazón del Búho (OwlEye Core).
-- `heuristic_analyzer.py`: El cerebro analítico.
-- `network_monitor.py`: Los oídos del centinela.
-- `hidden_logger.py`: El diario oculto del cazador.
+### 4. 📱 Alertas Nocturnas & Multi-Canal
+- Integración automática con **Telegram Bot API** para notificaciones críticas al móvil.
+- Exportación estructurada en `_sentry_log.sys` (archivo oculto de sistema).
 
 ---
 
-## �️ Tecnologías y Aptitudes (LinkedIn Ready)
-Este proyecto integra diversas competencias técnicas esenciales en el ámbito de la Ciberseguridad y el Desarrollo de Software:
+## 🛠️ Arquitectura del Sistema
 
-- **Ciberseguridad:** Análisis heurístico de amenazas, detección de escaneo de puertos (Port Scanning) y monitoreo de procesos sospechosos.
-- **Seguridad en Redes:** Gestión de conexiones TCP/UDP, trazabilidad de "Entry Points" y fundamentos de Networking (Cisco Focused).
-- **Desarrollo Multiplataforma:** Arquitectura compatible con Windows y Linux mediante Python.
-- **Automatización de Alertas:** Integración de APIs en tiempo real (Telegram Bot API) para respuesta inmediata ante incidentes.
-- **Sistemas Operativos:** Manipulación de atributos de sistema (Windows API/Kernel) y gestión de archivos en entornos POSIX (Linux).
-- **Python Avanzado:** Uso de librerías de bajo nivel como `psutil` y `ctypes`.
-
----
-
-## �🗺️ Mi Camino Completado
-- [x] Desarrollo de herramientas de monitoreo base (**v1.0**).
-- [x] Integración de lógica cross-platform (Win/Linux).
-- [x] Implementación de alertas vía Telegram/Slack.
-- [x] Análisis de tráfico heurístico (**Owl-Engine v2.0**).
-- [ ] Certificación internacional en Redes y Seguridad (Cisco/CCNA) - **Vuelo en curso**.
+- `sentry.py`: Orquestador principal del motor (Búho Core).
+- `active_defender.py`: Módulo de respuesta proactiva (Mitigación & Firewall).
+- `heuristic_analyzer.py`: Cerebro analítico y motor de puntuación de amenazas.
+- `web_dashboard.py`: Servidor de API REST en FastAPI para el Dashboard Web.
+- `dashboard_app/`: Interfaz gráfica interactiva (HTML5 / Vanilla CSS Cyberpunk / JS).
+- `network_monitor.py`: Rastreador de entradas y conexiones de red.
+- `process_monitor.py`: Monitoreo de procesos a bajo nivel.
+- `hidden_logger.py`: Diario sigiloso con persistencia oculta en SO.
 
 ---
 
-## 🗺️ Mi Camino a la Certificación (Cisco/CCNA)
-Proyecto utilizado como laboratorio práctico para los dominios de la certificación:
-- **Dominio 5:** Fundamentos de Seguridad (Seguridad de capa 2/3).
-- **Dominio 1:** Arquitectura de Red y conectividad IP.
+## 💻 Instalación Rápida (One-Liner & Docker)
 
-### 📚 Recursos del Cazador:
-- [Cisco Networking Academy](https://www.netacad.com/)
-- [Jeremy's IT Lab](https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5l0Qz)
+### Opción A: Ejecución Local en Python
+
+```bash
+# Clone the repository
+git clone https://github.com/ExeDevCentral/OwlEyeEngine.git
+cd OwlEyeEngine
+
+# Install requirements
+pip install -r requirements.txt
+
+# Run Sentry Engine + Web Dashboard
+python sentry.py
+```
+> Abre tu navegador en **`http://localhost:8000`** para acceder al Panel Web.
+
+### Opción B: Despliegue con Docker Compose (Recomendado)
+
+```bash
+docker-compose up -d --build
+```
 
 ---
 
 ## 🤝 Conéctate con el Búho
-*"La seguridad no es un producto, es un proceso de vigilancia constante."*
+
+*"La seguridad no es un producto, es un proceso de vigilancia constante y respuesta letal."*
 
 [GitHub Repository: OwlEyeEngine](https://github.com/ExeDevCentral/OwlEyeEngine.git)

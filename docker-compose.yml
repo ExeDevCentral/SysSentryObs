@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  owleye:
+    build: .
+    container_name: owleye_engine
+    network_mode: "host"
+    pid: "host"
+    privileged: true
+    restart: always
+    environment:
+      - OWLEYE_PORT=8000
+      - SENTRY_TELEGRAM_TOKEN=${SENTRY_TELEGRAM_TOKEN}
+      - SENTRY_TELEGRAM_CHAT_ID=${SENTRY_TELEGRAM_CHAT_ID}
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
