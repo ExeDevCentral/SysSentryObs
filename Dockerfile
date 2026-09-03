@@ -1,12 +1,12 @@
-FROM python:3.11-slim
+FROM python:3.12-slim AS base
 
 WORKDIR /app
 
-# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     iptables \
     net-tools \
     procps \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
@@ -14,9 +14,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+RUN addgroup --system owleye && adduser --system --ingroup owleye owleye
+RUN chown -R owleye:owleye /app
+
 EXPOSE 8000
 
 ENV PYTHONUNBUFFERED=1
 ENV OWLEYE_PORT=8000
+ENV OWLEYE_DEMO_MODE=true
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+USER owleye
 
 CMD ["python", "sentry.py"]

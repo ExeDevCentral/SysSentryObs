@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.git/
+.gitignore
+.sentry_log
+_sentry_log.sys
+*.md
+ESTRATEGIA_DE_VENTAS.md
+venv/
+.venv/
+*.log
+.env
+OwlEyeEngine-main.zip

@@ -3,72 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OwlEyeEngine | Silent Monitor & Active Cyber Defense</title>
-    <meta name="description" content="Next-generation ultra-lightweight EDR & Heuristic Security Agent for Linux, Windows & Cloud Servers with Real-time Active Defense.">
-    <link rel="stylesheet" href="style.css">
+    <title>OwlEyeEngine | Cybersecurity Monitoring Dashboard</title>
+    <meta name="description" content="Plataforma de ciberseguridad con monitoreo en tiempo real, detección heurística de amenazas y defensa activa. Proyecto demo para portafolio.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>">
+    <link rel="stylesheet" href="/landing/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Background Animated Mesh -->
     <div class="mesh-bg"></div>
-    
-    <!-- Header / Nav -->
+    <div class="grid-overlay"></div>
+
     <header class="header">
         <div class="nav-container">
             <a href="#" class="brand">
                 <span class="owl-logo">🦉</span>
                 <div class="brand-info">
                     <span class="brand-name">OwlEyeEngine</span>
-                    <span class="brand-badge">v3.0 GLOBAL</span>
+                    <span class="brand-badge">v3.0</span>
                 </div>
             </a>
             <nav class="nav-links">
-                <a href="#features">Capacidades</a>
-                <a href="#architecture">Arquitectura</a>
-                <a href="#pricing">Precios & Planes</a>
-                <a href="#quickstart" class="btn btn-secondary btn-nav">Despliegue Rápido</a>
-                <a href="http://localhost:8000" target="_blank" class="btn btn-primary btn-nav">Abrir Dashboard</a>
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#stack">Tech Stack</a>
+                <a href="#demo">Live Demo</a>
+                <a href="/dashboard" target="_blank" class="btn btn-primary btn-nav">Open Dashboard →</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-tag">
                 <span class="pulse-dot"></span>
-                SISTEMA DE CIBERSEGURIDAD DE PRÓXIMA GENERACIÓN
+                CYBERSECURITY ENGINEERING PROJECT
             </div>
-            <h1 class="hero-title">El Cazador Silencioso que Tu Infraestructura Necesita.</h1>
+            <h1 class="hero-title">El Cazador Silencioso de Amenazas Digitales.</h1>
             <p class="hero-subtitle">
-                Monitoreo de bajo nivel, detección heurística con puntuación de amenaza y mitigación activa (Auto-Kill & Bloqueo de IPs en Firewall) sin ralentizar tu servidor.
+                Sistema de monitoreo de procesos y red en tiempo real con detección heurística,
+                puntuación de amenazas y mitigación activa. Construido con Python, FastAPI y un
+                dashboard web estilo cyberpunk.
             </p>
             <div class="hero-actions">
-                <a href="#quickstart" class="btn btn-primary btn-lg">🚀 Probar Gratis en 1 Minuto</a>
-                <a href="#demo-script" class="btn btn-glass btn-lg">📹 Ver Guion de Demo</a>
+                <a href="/dashboard" target="_blank" class="btn btn-primary btn-lg">🚀 Ver Dashboard en Vivo</a>
+                <a href="https://github.com/ExeDevCentral/OwlEyeEngine" target="_blank" class="btn btn-glass btn-lg">
+                    <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="vertical-align:middle;margin-right:6px;"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                    GitHub
+                </a>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">&lt; 15 MB</span>
-                    <span class="stat-label">Consumo de RAM</span>
+                    <span class="stat-number">Python</span>
+                    <span class="stat-label">Backend + Monitoreo</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Respuesta en Milisegundos</span>
+                    <span class="stat-number">FastAPI</span>
+                    <span class="stat-label">API REST + WebSocket</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <span class="stat-number">Cross-Platform</span>
-                    <span class="stat-label">Windows & Linux Host</span>
+                    <span class="stat-number">Real-time</span>
+                    <span class="stat-label">Dashboard Cyberpunk</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Mockup Showcase -->
     <section class="mockup-section">
         <div class="window-mockup">
             <div class="window-header">
@@ -77,186 +80,170 @@
                     <span class="dot dot-yellow"></span>
                     <span class="dot dot-green"></span>
                 </div>
-                <div class="window-title">OwlEyeEngine Web Console — http://localhost:8000</div>
+                <div class="window-title">OwlEyeEngine — Live Dashboard</div>
             </div>
             <div class="window-body">
                 <div class="mockup-grid">
                     <div class="mock-card">
-                        <div class="mock-label">DEFENSA ACTIVA</div>
-                        <div class="mock-val green">AUTO-MITIGACIÓN ON</div>
+                        <div class="mock-label">ACTIVE DEFENSE</div>
+                        <div class="mock-val green">● AUTO ON</div>
                     </div>
                     <div class="mock-card">
                         <div class="mock-label">CPU USAGE</div>
                         <div class="mock-val cyan">0.4%</div>
                     </div>
                     <div class="mock-card">
-                        <div class="mock-label">PORT SCAN THREATS</div>
-                        <div class="mock-val rose">BLOCKED (85/100)</div>
+                        <div class="mock-label">THREATS</div>
+                        <div class="mock-val rose">7 DETECTED</div>
                     </div>
                 </div>
                 <div class="mockup-table">
                     <div class="mock-row header-row">
-                        <span>TIMESTAMP</span>
-                        <span>EVENTO</span>
-                        <span>RIESGO</span>
-                        <span>ACCIÓN AUTOMÁTICA</span>
+                        <span>TIME</span>
+                        <span>THREAT</span>
+                        <span>SCORE</span>
+                        <span>ACTION</span>
                     </div>
                     <div class="mock-row">
-                        <span>16:32:01</span>
-                        <span>Port Scan IP: 192.168.1.105</span>
+                        <span>14:32:01</span>
+                        <span>Port Scan 45.33.32.156</span>
                         <span class="badge-danger">85/100</span>
-                        <span class="badge-success">IP Bloqueada en Firewall</span>
+                        <span class="badge-success">IP Blocked</span>
                     </div>
                     <div class="mock-row">
-                        <span>16:30:14</span>
-                        <span>Execution /tmp/malware.sh</span>
-                        <span class="badge-danger">90/100</span>
-                        <span class="badge-success">Proceso Finalizado (PID 4921)</span>
+                        <span>14:30:14</span>
+                        <span>Exec /tmp/payload.exe</span>
+                        <span class="badge-danger">92/100</span>
+                        <span class="badge-success">Process Killed</span>
+                    </div>
+                    <div class="mock-row">
+                        <span>14:28:55</span>
+                        <span>Port Scan 185.220.101.42</span>
+                        <span class="badge-danger">78/100</span>
+                        <span class="badge-success">IP Blocked</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="section">
         <div class="section-header">
-            <h2>Por qué OwlEyeEngine Supera a Antivirus Tradicionales</h2>
-            <p>Diseñado bajo la metáfora del búho: sigilo absoluto, visión 360° y respuesta letal proactiva.</p>
+            <h2>Capacidades del Sistema</h2>
+            <p>Arquitectura de seguridad de múltiples capas bajo la metáfora del búho: silencio, visión 360° y respuesta letal.</p>
         </div>
 
         <div class="cards-grid">
             <div class="feature-card">
                 <div class="feature-icon">🔍</div>
-                <h3>Visión 360° de Procesos</h3>
-                <p>Inspección continua de la jerarquía de procesos estilo htop. Detecta inmediatamente ejecutables lanzados desde directorios temporales u ocultos.</p>
+                <h3>Monitoreo de Procesos</h3>
+                <p>Inspección continua de la jerarquía de procesos estilo htop. Detecta ejecutables lanzados desde directorios temporales u ocultos.</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Mitigación Activa Instantánea</h3>
-                <p>No solo genera alertas: liquida procesos maliciosos en milisegundos y aplica reglas dinámicas en el Firewall del sistema operativo.</p>
+                <div class="feature-icon">🧠</div>
+                <h3>Análisis Heurístico</h3>
+                <p>Motor de puntuación de amenazas de 0 a 100 con clasificación LOW, MEDIUM, HIGH y CRITICAL basado en patrones de comportamiento.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>Contexto de Red Cisco</h3>
-                <p>Identificación precisa de Entry Points y detección de barridos de puertos en entornos de red complejos antes de que se produzca una brecha.</p>
+                <h3>Monitoreo de Red</h3>
+                <p>Rastreo de conexiones entrantes y detección de barridos de puertos (port scanning) con identificación de entry points.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Defensa Activa</h3>
+                <p>Mitigación automática: terminación de procesos maliciosos y bloqueo de IPs hostiles en el firewall del sistema operativo.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📱</div>
                 <h3>Alertas en Tiempo Real</h3>
-                <p>Integración nativa con Telegram Bot API y Webhooks para recibir notificaciones críticas directamente en tu teléfono inteligente.</p>
+                <p>Integración con Telegram Bot API para notificaciones críticas en tu móvil, y WebSocket para actualizaciones en vivo del dashboard.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Dashboard en Vivo</h3>
+                <p>Interfaz glassmorphic con KPIs en tiempo real, filtros de procesos, acciones de respuesta rápida y terminal de logs.</p>
             </div>
         </div>
     </section>
 
-    <!-- Quick Start -->
-    <section id="quickstart" class="section bg-panel">
+    <section id="architecture" class="section bg-panel">
         <div class="section-header">
-            <h2>Despliegue Rápido en 1 Comando</h2>
-            <p>Listo para instalar en cualquier servidor Linux, Windows o contenedor Docker.</p>
+            <h2>Arquitectura Modular</h2>
+            <p>Componentes desacoplados y orquestados por el núcleo del motor.</p>
         </div>
 
-        <div class="code-box">
-            <div class="code-header">
-                <span>Bash / Docker One-Liner</span>
-                <button class="copy-btn" onclick="navigator.clipboard.writeText('docker-compose up -d --build')">Copiar</button>
+        <div class="arch-grid">
+            <div class="arch-node">
+                <span class="arch-role">ORCHESTRATOR</span>
+                <strong>sentry.py</strong>
+                <p>Núcleo del motor, coordina todos los módulos de monitoreo.</p>
             </div>
-            <pre><code><span class="code-comment"># Opción 1: Despliegue inmediato en Docker</span>
-git clone https://github.com/ExeDevCentral/OwlEyeEngine.git
-cd OwlEyeEngine
-docker-compose up -d --build
-
-<span class="code-comment"># Opción 2: Ejecución local con Python</span>
-pip install -r requirements.txt
-python sentry.py</code></pre>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+                <span class="arch-role">MONITORING</span>
+                <strong>process_monitor.py</strong>
+                <strong style="margin-top:4px;">network_monitor.py</strong>
+                <p>Captura de procesos y conexiones en tiempo real.</p>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+                <span class="arch-role">ANALYSIS</span>
+                <strong>heuristic_analyzer.py</strong>
+                <p>Motor heurístico y scoring de amenazas (0-100).</p>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+                <span class="arch-role">RESPONSE</span>
+                <strong>active_defender.py</strong>
+                <p>Auto-kill de procesos y bloqueo de IPs en firewall.</p>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">
+                <span class="arch-role">PRESENTATION</span>
+                <strong>web_dashboard.py</strong>
+                <p>API FastAPI, WebSocket y dashboard glassmorphic.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="section">
+    <section id="stack" class="section">
         <div class="section-header">
-            <h2>Modelo Comercial Open-Core</h2>
-            <p>Comienza gratis con el agente local o escala a la nube para gestionar infraestructuras complejas.</p>
+            <h2>Tecnologías</h2>
+            <p>Stack moderno y eficiente para monitoreo de bajo nivel.</p>
         </div>
-
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="price-tier">COMMUNITY OPEN-CORE</div>
-                <div class="price-amount">$0 <span>/ para siempre</span></div>
-                <p class="price-desc">Ideal para desarrolladores, Homelabs y un único servidor.</p>
-                <ul class="price-features">
-                    <li>✓ Agente completo Python local</li>
-                    <li>✓ Dashboard Web Local (Puerto 8000)</li>
-                    <li>✓ Detección Heurística & Auto-Kill</li>
-                    <li>✓ Alertas por Telegram</li>
-                    <li>✓ Código Fuente Open Source</li>
-                </ul>
-                <a href="#quickstart" class="btn btn-secondary btn-full">Descargar Gratis</a>
-            </div>
-
-            <div class="pricing-card featured">
-                <div class="popular-badge">MÁS POPULAR</div>
-                <div class="price-tier">PRO CLOUD SAAS</div>
-                <div class="price-amount">$19 <span>/ mes</span></div>
-                <p class="price-desc">Para startups y administradores de hasta 10 servidores.</p>
-                <ul class="price-features">
-                    <li>✓ Todo lo del plan Community</li>
-                    <li>✓ Central de Mando Cloud Multi-Nodo</li>
-                    <li>✓ Historial de Logs ILIMITADO en Nube</li>
-                    <li>✓ Reglas SIGMA & YARA personalizadas</li>
-                    <li>✓ Soporte Técnico Prioritario</li>
-                </ul>
-                <a href="#" class="btn btn-primary btn-full">Iniciar Prueba de 14 Días</a>
-            </div>
+        <div class="stack-grid">
+            <div class="stack-item"><span class="stack-icon">🐍</span><strong>Python 3.12</strong><small>Lenguaje principal</small></div>
+            <div class="stack-item"><span class="stack-icon">⚡</span><strong>FastAPI</strong><small>API REST moderna</small></div>
+            <div class="stack-item"><span class="stack-icon">🔌</span><strong>WebSockets</strong><small>Streaming en tiempo real</small></div>
+            <div class="stack-item"><span class="stack-icon">📊</span><strong>psutil</strong><small>Monitoreo de sistema</small></div>
+            <div class="stack-item"><span class="stack-icon">🐳</span><strong>Docker</strong><small>Contenerización</small></div>
+            <div class="stack-item"><span class="stack-icon">🎨</span><strong>CSS Glassmorphism</strong><small>UI Cyberpunk</small></div>
         </div>
     </section>
 
-    <!-- Demo Script Section -->
-    <section id="demo-script" class="section bg-panel">
+    <section id="demo" class="section bg-panel">
         <div class="section-header">
-            <h2>🎬 Guion de Video Demo (60 Segundos para Redes Sociales)</h2>
-            <p>Usa esta estructura exacta para grabar el video demostrativo que atraerá clientes e inversores.</p>
+            <h2>Proyecto en Vivo</h2>
+            <p>Explora el dashboard interactivo con datos de demostración.</p>
         </div>
-
-        <div class="script-timeline">
-            <div class="timeline-step">
-                <div class="step-time">00:00 - 00:10</div>
-                <div class="step-content">
-                    <h4>El Gancho (The Hook)</h4>
-                    <p><em>"¿Sabías que los antivirus tradicionales consumen hasta el 30% de tu CPU y RAM en servidores pequeños? Presentamos OwlEyeEngine: el cazador silencioso."</em></p>
-                </div>
-            </div>
-            <div class="timeline-step">
-                <div class="step-time">00:10 - 00:35</div>
-                <div class="step-content">
-                    <h4>La Demostración del Ataque</h4>
-                    <p>Muestra la pantalla dividida. A la izquierda, simulas ejecutar un script en `/tmp/fake_malware.py`. A la derecha, muestras el Dashboard de OwlEye detectándolo en 0.2 segundos y liquidando el proceso con el escudo de Defensa Activa.</p>
-                </div>
-            </div>
-            <div class="timeline-step">
-                <div class="step-time">00:35 - 00:50</div>
-                <div class="step-content">
-                    <h4>El Panel de Control</h4>
-                    <p>Enseña la interfaz cyberpunk en `http://localhost:8000`, mostrando el gráfico de conexiones activas, consumo de recursos ultra-bajo y logs encriptados.</p>
-                </div>
-            </div>
-            <div class="timeline-step">
-                <div class="step-time">00:50 - 01:00</div>
-                <div class="step-content">
-                    <h4>Llamado a la Acción (CTA)</h4>
-                    <p><em>"OwlEyeEngine v3.0 ya está disponible de código abierto en GitHub. Pruébalo gratis hoy en tu servidor o Homelab."</em></p>
-                </div>
-            </div>
+        <div style="text-align:center;">
+            <a href="/dashboard" target="_blank" class="btn btn-primary btn-lg">Abrir Dashboard Interactivo →</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p>© 2026 OwlEyeEngine Security. Desarrollado con tecnología de cazador nocturno.</p>
-        <p><a href="https://github.com/ExeDevCentral/OwlEyeEngine.git" target="_blank" style="color: var(--cyan);">GitHub Repository</a></p>
+        <p>© 2026 OwlEyeEngine. Desarrollado para portafolio de Exepaginasweb.com</p>
+        <p style="margin-top:8px;">
+            <a href="https://github.com/ExeDevCentral/OwlEyeEngine" target="_blank" style="color:var(--cyan);">GitHub</a>
+            <span style="margin:0 8px;opacity:0.4;">·</span>
+            <a href="/dashboard" style="color:var(--cyan);">Dashboard</a>
+        </p>
     </footer>
 </body>
 </html>

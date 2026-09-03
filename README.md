@@ -84,3 +84,72 @@ docker-compose up -d --build
 *"La seguridad no es un producto, es un proceso de vigilancia constante y respuesta letal."*
 
 [GitHub Repository: OwlEyeEngine](https://github.com/ExeDevCentral/OwlEyeEngine.git)
+
+---
+
+## ?? Despliegue en Producción
+
+### Modo Demo (Portfolio / Demo en vivo)
+
+Para mostrar el proyecto sin exponer procesos reales del servidor:
+
+```bash
+# Local
+export OWLEYE_DEMO_MODE=true   # Linux/macOS
+$env:OWLEYE_DEMO_MODE="true"   # Windows PowerShell
+python sentry.py
+
+# Docker (perfil demo, puerto 8001)
+docker compose --profile demo up -d --build
+```
+
+### Modo Live (monitoreo real)
+
+```bash
+export OWLEYE_DEMO_MODE=false
+python sentry.py
+```
+
+### Variables de entorno
+
+| Variable | Descripción | Default |
+|----------|-------------|---------|
+| `OWLEYE_PORT` | Puerto del dashboard | `8000` |
+| `OWLEYE_DEMO_MODE` | `true` = datos simulados | `false` |
+| `SENTRY_TELEGRAM_TOKEN` | Token del bot de Telegram | — |
+| `SENTRY_TELEGRAM_CHAT_ID` | Chat ID para alertas | — |
+
+### Rutas
+
+- `/` ? Landing page (portfolio)
+- `/dashboard` ? Dashboard interactivo
+- `/api/status` ? Estado en tiempo real
+- `/api/threats` ? Amenazas heurísticas
+- `/ws/live` ? WebSocket en vivo
+- `/health` ? Health check
+
+### Despliegue en un servidor (Docker)
+
+```bash
+# Modo demo para portfolio
+OWLEYE_DEMO_MODE=true docker compose up -d --build
+
+# Modo live (requiere privilegios para firewall)
+docker compose up -d --build
+```
+
+### Reverse Proxy (Nginx) ejemplo
+
+```nginx
+server {
+    listen 80;
+    server_name owleye.example.com;
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+    }
+}
+```
